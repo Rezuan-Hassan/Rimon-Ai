@@ -1,0 +1,6 @@
+{
+  "name": "Rimon AI",
+  "description": "An intelligent, adaptive, and highly efficient AI chatbot designed to assist users with clarity, precision, and a touch of professional warmth.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

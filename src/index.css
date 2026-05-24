@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom gorgeous Cosmic Sophisticated scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #03010a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b1429;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #34284d;
+}
+
+/* Animated cosmic background keyframes & layers */
+@keyframes slow-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes floating-dust {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+  33% { transform: translateY(-15px) translateX(10px); opacity: 0.8; }
+  66% { transform: translateY(10px) translateX(-15px); opacity: 0.5; }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes text-glow-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 15px rgba(0, 150, 255, 0.45),
+      0 0 30px rgba(0, 235, 212, 0.25),
+      0 0 45px rgba(162, 0, 255, 0.15);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(0, 150, 255, 0.9),
+      0 0 50px rgba(0, 235, 212, 0.8),
+      0 0 70px rgba(162, 0, 255, 0.75),
+      0 0 90px rgba(242, 0, 121, 0.6);
+  }
+}
+
+@keyframes neon-border-pulse {
+  0%, 100% {
+    border-color: rgba(0, 235, 212, 0.2);
+    box-shadow: 0 0 10px rgba(0, 235, 212, 0.05);
+  }
+  50% {
+    border-color: rgba(162, 0, 255, 0.5);
+    box-shadow: 0 0 20px rgba(162, 0, 255, 0.2);
+  }
+}
+
+.pulsing-glow {
+  animation: star-twinkle 4s infinite ease-in-out;
+}
+
+.cosmic-nebula {
+  background: radial-gradient(circle at 50% 30%, #0d061f 0%, #04020a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-nebula::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(162, 0, 255, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 80% 35%, rgba(0, 235, 212, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 45% 75%, rgba(242, 0, 121, 0.12) 0%, transparent 45%);
+  filter: blur(80px);
+  animation: slow-rotate 48s infinite linear;
+  pointer-events: none;
+}
+
+/* Beautiful text gradient precisely transitioning based on user image */
+.glowing-cosmic-text {
+  background: linear-gradient(
+    to right,
+    #0096ff 0%,
+    #00ebd4 28%,
+    #4deeea 48%,
+    #a200ff 74%,
+    #f20079 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: text-glow-pulse 4.5s infinite ease-in-out;
+}
+
+/* Glassmorphic panels with neon borders of deep space styling */
+.glass-panel {
+  background: rgba(10, 6, 22, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-glow {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-glow:hover {
+  border-color: rgba(0, 235, 212, 0.35);
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(0, 235, 212, 0.12);
+}
+
+.neon-glow-btn {
+  background: rgba(0, 235, 212, 0.05);
+  border: 1px solid rgba(0, 235, 212, 0.3);
+  box-shadow: 0 0 10px rgba(0, 235, 212, 0.05);
+  transition: all 0.3s ease;
+}
+
+.neon-glow-btn:hover {
+  background: rgba(0, 235, 212, 0.15);
+  border-color: rgba(0, 235, 212, 0.8);
+  box-shadow: 0 0 20px rgba(0, 235, 212, 0.3);
+}
+
+.neon-glow-btn-purple {
+  background: rgba(162, 0, 255, 0.05);
+  border: 1px solid rgba(162, 0, 255, 0.3);
+  box-shadow: 0 0 10px rgba(162, 0, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.neon-glow-btn-purple:hover {
+  background: rgba(162, 0, 255, 0.15);
+  border-color: rgba(162, 0, 255, 0.8);
+  box-shadow: 0 0 20px rgba(162, 0, 255, 0.3);
+}
+
+
